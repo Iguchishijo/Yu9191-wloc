@@ -25,7 +25,20 @@ https://raw.githubusercontent.com/Yu9191/wloc/refs/heads/main/modules/wloc.lpx
 https://raw.githubusercontent.com/Yu9191/wloc/refs/heads/main/modules/wloc.stoverride
 
 **Shadowrocket(小火箭):**
-https://raw.githubusercontent.com/Yu9191/wloc/refs/heads/main/modules/wloc.module
+https://raw.githubusercontent.com/merlinLabo/Yu9191-wloc/refs/heads/main/modules/wloc.module
+
+本 fork 已修复 Shadowrocket 模块、图标及两个脚本的原仓库失效链接，文件名为小写 `wloc.module`。
+
+Shadowrocket 安装与验证：
+
+1. 打开「配置 → 模块 → 右上角 +」，粘贴上面的地址并启用模块。已添加旧模块的用户请删除旧模块后重新添加。
+2. 在当前使用的配置右侧点 `ⓘ`，开启「HTTPS 解密」。首次使用需生成并安装 CA 证书，再到 iOS「设置 → 通用 → 关于本机 → 证书信任设置」信任对应的 Shadowrocket 证书。
+3. 开启 Shadowrocket 连接，在 Safari 打开 https://wloc-pages.pages.dev/ ，选位置并点「储存到设备」。该公共页面仍由第三方维护。
+4. 在同一手机 Safari 打开 https://gs-loc.apple.com/wloc-settings/save?action=query ，应返回包含 `success: true` 和目标经纬度的 JSON。这一步验证模块拦截和坐标存储；实际定位修改还需触发 WLOC 请求，并在脚本日志中确认 `patched=` 大于 0。
+
+如果选点页面不可用，可直接在 Safari 打开 `https://gs-loc.apple.com/wloc-settings/save?lon=目标经度&lat=目标纬度`（替换为 WGS84 数字坐标）；打开 `https://gs-loc.apple.com/wloc-settings/save?action=clear` 可清除保存的坐标。保持模块默认参数时，清除后恢复透传；也可直接关闭模块。
+
+若查询地址返回 404 或证书错误，先检查模块是否启用、当前配置是否开启 HTTPS 解密、证书是否已信任。查询成功但定位未变时，再检查 WLOC 日志与下文的系统兼容性说明；本项目修改的是网络定位响应，不能保证覆盖 GPS 或所有 App 的定位结果。
 
 > Egern 可直接使用 Surge 模块
 > Stash 请直接订阅上面的 `.stoverride`，无需用 Script Hub 转换
