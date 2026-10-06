@@ -25,7 +25,7 @@ https://raw.githubusercontent.com/Yu9191/wloc/refs/heads/main/modules/wloc.lpx
 https://raw.githubusercontent.com/Yu9191/wloc/refs/heads/main/modules/wloc.stoverride
 
 **Shadowrocket(小火箭):**
-https://raw.githubusercontent.com/merlinLabo/Yu9191-wloc/refs/heads/main/modules/wloc.module
+https://raw.githubusercontent.com/Iguchishijo/Yu9191-wloc/refs/heads/main/modules/wloc.module
 
 本 fork 已修复 Shadowrocket 模块、图标及两个脚本的原仓库失效链接，文件名为小写 `wloc.module`。
 
